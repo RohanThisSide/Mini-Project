@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Registration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="teacher-register">
+    <main class="page-shell single-card">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Sable</p>
+          <h1>Teacher Register</h1>
+          <p class="hero-copy">
+            Store teacher details separately so the project supports both
+            student and teacher registration.
+          </p>
+        </div>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="student-register.html">Student Register</a>
+          <a class="nav-link active" href="teacher-register.html"
+            >Teacher Register</a
+          >
+          <a class="nav-link" href="attendance.html">QR Tools</a>
+          <a class="nav-link" href="student-dashboard.html">Student Dashboard</a>
+          <a class="nav-link" href="teacher-dashboard.html">Teacher Dashboard</a>
+        </nav>
+      </section>
+
+      <section class="section">
+        <h2>Register Teacher</h2>
+        <form id="teacherRegisterForm">
+          <div class="form-grid">
+            <div>
+              <label for="teacherName">Full Name</label>
+              <input
+                id="teacherName"
+                type="text"
+                placeholder="Enter teacher name"
+                required
+              />
+            </div>
+            <div>
+              <label for="teacherId">Teacher ID</label>
+              <input
+                id="teacherId"
+                type="text"
+                placeholder="Enter teacher ID"
+                required
+              />
+            </div>
+            <div>
+              <label for="teacherDepartment">Department</label>
+              <input
+                id="teacherDepartment"
+                type="text"
+                placeholder="Enter department"
+                required
+              />
+            </div>
+            <div>
+              <label for="teacherSubject">Primary Subject</label>
+              <input
+                id="teacherSubject"
+                type="text"
+                placeholder="Enter subject"
+                required
+              />
+            </div>
+            <div class="full-width">
+              <label for="teacherEmail">Email</label>
+              <input
+                id="teacherEmail"
+                type="email"
+                placeholder="Enter email address"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit">Save Teacher</button>
+        </form>
+        <div id="teacherSessionCard" class="session-card hidden">
+          <p class="session-label">Teacher Session Active</p>
+          <h3>You are logged in on this browser</h3>
+          <p class="section-copy">
+            This teacher stays signed in after registration and there is no
+            logout action here.
+          </p>
+          <div id="teacherSessionDetails" class="session-details"></div>
+        </div>
+        <div id="teacherRegisterMessage" class="message hidden"></div>
+      </section>
+    </main>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

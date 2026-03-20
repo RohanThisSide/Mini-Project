@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="student-dashboard">
+    <main class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Student Portal</p>
+          <h1>Student Dashboard</h1>
+          <p class="hero-copy">
+            Check your attendance subject-wise, track your percentage, and view
+            your lecture history.
+          </p>
+        </div>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="student-register.html">Student Register</a>
+          <a class="nav-link" href="teacher-register.html">Teacher Register</a>
+          <a class="nav-link" href="attendance.html">QR Tools</a>
+          <a class="nav-link active" href="student-dashboard.html">Student Dashboard</a>
+          <a class="nav-link" href="teacher-dashboard.html">Teacher Dashboard</a>
+        </nav>
+      </section>
+
+      <section id="studentDashboardAccessMessage" class="section">
+        <h2>Student Access Required</h2>
+        <p class="section-copy">
+          Register a student on this browser first to unlock the student
+          dashboard.
+        </p>
+      </section>
+
+      <div id="studentDashboardContent" class="hidden">
+        <section class="section">
+          <div class="section-heading">
+            <div>
+              <h2>My Attendance</h2>
+              <p class="section-copy">
+                Logged in student:
+                <span id="studentDashboardStudentName"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="stat-grid">
+            <article class="stat-card">
+              <p class="stat-label">Overall Attendance</p>
+              <h3 id="studentOverallPercentage">0%</h3>
+            </article>
+            <article class="stat-card">
+              <p class="stat-label">Present Classes</p>
+              <h3 id="studentTotalPresent">0</h3>
+            </article>
+            <article class="stat-card">
+              <p class="stat-label">Total Classes</p>
+              <h3 id="studentTotalLectures">0</h3>
+            </article>
+          </div>
+        </section>
+
+        <section class="attendance-section">
+          <h2>Subject-wise Attendance</h2>
+          <table id="studentSubjectTable">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Present</th>
+                <th>Total</th>
+                <th>Attendance %</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section class="attendance-section">
+          <h2>Attendance History</h2>
+          <table id="studentHistoryTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Branch</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

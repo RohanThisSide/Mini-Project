@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Attendance Tools</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  </head>
+  <body data-page="dashboard">
+    <main class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">QR Attendance Suite</p>
+          <h1>QR Download And Scan</h1>
+          <p class="hero-copy">
+            Generate student QR codes, scan attendance, and manage daily
+            attendance records here.
+          </p>
+        </div>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="student-register.html">Student Register</a>
+          <a class="nav-link" href="teacher-register.html">Teacher Register</a>
+          <a class="nav-link active" href="attendance.html">QR Tools</a>
+          <a class="nav-link" href="student-dashboard.html">Student Dashboard</a>
+          <a class="nav-link" href="teacher-dashboard.html">Teacher Dashboard</a>
+        </nav>
+      </section>
+
+      <div class="container">
+        <section class="section">
+          <h2>Generate Student QR Code</h2>
+          <p class="section-copy">
+            Only the single student registered on this browser can use this QR.
+          </p>
+          <div class="session-pill">
+            <strong>Student Access:</strong>
+            <span id="dashboardStudentStatus">Checking student session...</span>
+          </div>
+          <div class="session-pill">
+            <strong>Teacher Access:</strong>
+            <span id="dashboardTeacherStatus">Checking teacher session...</span>
+          </div>
+          <select id="registeredStudentSelect">
+            <option value="">-- Select Registered Student --</option>
+          </select>
+          <div id="qrDisplayContainer" class="qr-panel hidden">
+            <div id="userInfo" class="user-info"></div>
+            <div id="qrcode"></div>
+            <button id="downloadQrBtn" type="button">Download QR Code</button>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Mark Attendance</h2>
+          <p class="section-copy">
+            Select the lecture first, then scan only the logged-in student's QR
+            code.
+          </p>
+          <p id="scannerAccessMessage" class="section-copy">
+            Checking scanner access...
+          </p>
+          <select id="branchScan" required>
+            <option value="">-- Select Branch --</option>
+            <option value="CS">Computer Science (CS)</option>
+            <option value="AIML">AI &amp; ML (AIML)</option>
+            <option value="ECS">Electronics &amp; Comm. (ECS)</option>
+            <option value="Mech">Mechanical (Mech)</option>
+            <option value="DSE">Data Science (DSE)</option>
+            <option value="Elect">Electrical (Elect)</option>
+          </select>
+          <select id="subjectScan" required>
+            <option value="">-- Select Subject --</option>
+          </select>
+          <div id="reader" class="reader"></div>
+        </section>
+      </div>
+
+      <section class="attendance-section">
+        <div class="section-heading">
+          <div>
+            <h2>Today's Attendance</h2>
+            <p class="section-copy">
+              Date: <span id="todayDateDisplay"></span>
+            </p>
+          </div>
+          <div id="sortContainer"></div>
+        </div>
+        <table id="attendanceTable">
+          <thead>
+            <tr>
+              <th>Roll Number</th>
+              <th>Name</th>
+              <th>Branch</th>
+              <th>Subject</th>
+              <th>Status</th>
+              <th id="attendanceActionHeader">Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button id="exportToSheetBtn" type="button" data-teacher-only>
+          Export All Attendance to Google Sheets
+        </button>
+      </section>
+
+      <section class="attendance-section hidden" data-teacher-only>
+        <div class="section-heading">
+          <div>
+            <h2>Branch Exports</h2>
+            <p class="section-copy">
+              Each branch is exported into its own file with a unique timestamp
+              so records stay separated and scalable.
+            </p>
+          </div>
+        </div>
+        <div id="branchExportGrid" class="export-grid"></div>
+      </section>
+    </main>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

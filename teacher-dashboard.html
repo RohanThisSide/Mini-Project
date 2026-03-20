@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="teacher-dashboard">
+    <main class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Teacher Portal</p>
+          <h1>Teacher Dashboard</h1>
+          <p class="hero-copy">
+            Review all student attendance, subject coverage, and lecture-wise
+            presence from one place.
+          </p>
+        </div>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="student-register.html">Student Register</a>
+          <a class="nav-link" href="teacher-register.html">Teacher Register</a>
+          <a class="nav-link" href="attendance.html">QR Tools</a>
+          <a class="nav-link" href="student-dashboard.html">Student Dashboard</a>
+          <a class="nav-link active" href="teacher-dashboard.html">Teacher Dashboard</a>
+        </nav>
+      </section>
+
+      <section id="teacherDashboardAccessMessage" class="section">
+        <h2>Teacher Access Required</h2>
+        <p class="section-copy">
+          Register a teacher on this browser first to unlock the teacher
+          dashboard.
+        </p>
+      </section>
+
+      <div id="teacherDashboardContent" class="hidden">
+        <section class="section">
+          <div class="section-heading">
+            <div>
+              <h2>Attendance Overview</h2>
+              <p class="section-copy">
+                Logged in teacher:
+                <span id="teacherDashboardTeacherName"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="stat-grid">
+            <article class="stat-card">
+              <p class="stat-label">Students</p>
+              <h3 id="teacherTotalStudents">0</h3>
+            </article>
+            <article class="stat-card">
+              <p class="stat-label">Lectures</p>
+              <h3 id="teacherTotalLectures">0</h3>
+            </article>
+            <article class="stat-card">
+              <p class="stat-label">Subjects</p>
+              <h3 id="teacherTotalSubjects">0</h3>
+            </article>
+          </div>
+
+          <div class="filter-grid">
+            <div>
+              <label for="teacherDashboardBranch">Branch</label>
+              <select id="teacherDashboardBranch">
+                <option value="">All Branches</option>
+                <option value="CS">Computer Science (CS)</option>
+                <option value="AIML">AI &amp; ML (AIML)</option>
+                <option value="ECS">Electronics &amp; Comm. (ECS)</option>
+                <option value="Mech">Mechanical (Mech)</option>
+                <option value="DSE">Data Science (DSE)</option>
+                <option value="Elect">Electrical (Elect)</option>
+              </select>
+            </div>
+            <div>
+              <label for="teacherDashboardSubject">Subject</label>
+              <select id="teacherDashboardSubject">
+                <option value="">All Subjects</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="attendance-section">
+          <h2>Student Attendance Summary</h2>
+          <table id="teacherAttendanceTable">
+            <thead>
+              <tr>
+                <th>Roll Number</th>
+                <th>Name</th>
+                <th>Branch</th>
+                <th>Present</th>
+                <th>Total</th>
+                <th>Attendance %</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section class="attendance-section">
+          <h2>Lecture History</h2>
+          <table id="teacherLectureTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Branch</th>
+                <th>Subject</th>
+                <th>Present</th>
+                <th>Absent</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

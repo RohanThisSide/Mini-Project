@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="home">
+    <main class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">QR Attendance Suite</p>
+          <h1>Choose What You Want To Do</h1>
+          <p class="hero-copy">
+            Start by selecting student registration, teacher registration, or
+            the QR attendance tools page.
+          </p>
+        </div>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link" href="student-register.html">Student Register</a>
+          <a class="nav-link" href="teacher-register.html">Teacher Register</a>
+          <a class="nav-link" href="attendance.html">QR Tools</a>
+          <a class="nav-link" href="student-dashboard.html">Student Dashboard</a>
+          <a class="nav-link" href="teacher-dashboard.html">Teacher Dashboard</a>
+        </nav>
+      </section>
+
+      <section class="section">
+        <h2>Registration And Attendance</h2>
+        <p class="section-copy">
+          Use the cards below to move to the page you need.
+        </p>
+        <div class="session-overview">
+          <div class="session-pill">
+            <strong>Student:</strong>
+            <span id="homeStudentStatus">Checking student session...</span>
+          </div>
+          <div class="session-pill">
+            <strong>Teacher:</strong>
+            <span id="homeTeacherStatus">Checking teacher session...</span>
+          </div>
+        </div>
+
+        <div class="choice-grid">
+          <a class="choice-card" href="student-register.html">
+            <span class="choice-label">Student</span>
+            <h3>Student Register</h3>
+            <p>
+              Save student details for QR generation and attendance tracking.
+            </p>
+          </a>
+
+          <a class="choice-card" href="teacher-register.html">
+            <span class="choice-label">Teacher</span>
+            <h3>Teacher Register</h3>
+            <p>Store teacher details on a separate registration page.</p>
+          </a>
+
+          <a class="choice-card" href="attendance.html">
+            <span class="choice-label">QR</span>
+            <h3>QR Download And Scan</h3>
+            <p>
+              Generate student QR codes, scan attendance, and export daily
+              records.
+            </p>
+          </a>
+
+          <a class="choice-card" href="student-dashboard.html">
+            <span class="choice-label">Student</span>
+            <h3>Student Dashboard</h3>
+            <p>Check subject attendance, overall percentage, and history.</p>
+          </a>
+
+          <a class="choice-card" href="teacher-dashboard.html">
+            <span class="choice-label">Teacher</span>
+            <h3>Teacher Dashboard</h3>
+            <p>View attendance for all students, lectures, and subjects.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+    <script src="script1.js"></script>
+  </body>
+</html>

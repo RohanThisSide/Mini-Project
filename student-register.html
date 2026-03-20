@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="student-register">
+    <main class="page-shell single-card">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Registration</p>
+          <h1>Student Register</h1>
+          <p class="hero-copy">
+            Create and store student profiles used by the attendance dashboard
+            and QR generator.
+          </p>
+        </div>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="student-register.html"
+            >Student Register</a
+          >
+          <a class="nav-link" href="teacher-register.html">Teacher Register</a>
+          <a class="nav-link" href="attendance.html">QR Tools</a>
+          <a class="nav-link" href="student-dashboard.html">Student Dashboard</a>
+          <a class="nav-link" href="teacher-dashboard.html">Teacher Dashboard</a>
+        </nav>
+      </section>
+
+      <section class="section">
+        <h2>Register Student</h2>
+        <form id="studentRegisterForm">
+          <div class="form-grid">
+            <div>
+              <label for="studentName">Full Name</label>
+              <input
+                id="studentName"
+                type="text"
+                placeholder="Enter student name"
+                required
+              />
+            </div>
+            <div>
+              <label for="studentRoll">Roll Number</label>
+              <input
+                id="studentRoll"
+                type="text"
+                placeholder="Enter roll number"
+                required
+              />
+            </div>
+            <div>
+              <label for="studentBranch">Branch</label>
+              <select id="studentBranch" required>
+                <option value="">-- Select Branch --</option>
+                <option value="CS">Computer Science (CS)</option>
+                <option value="AIML">AI &amp; ML (AIML)</option>
+                <option value="ECS">Electronics &amp; Comm. (ECS)</option>
+                <option value="Mech">Mechanical (Mech)</option>
+                <option value="DSE">Data Science (DSE)</option>
+                <option value="Elect">Electrical (Elect)</option>
+              </select>
+            </div>
+            <div>
+              <label for="studentYear">Year / Semester</label>
+              <input
+                id="studentYear"
+                type="text"
+                placeholder="e.g. Second Year / Sem 4"
+                required
+              />
+            </div>
+            <div class="full-width">
+              <label for="studentEmail">Email</label>
+              <input
+                id="studentEmail"
+                type="email"
+                placeholder="Enter email address"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit">Save Student</button>
+        </form>
+        <div id="studentSessionCard" class="session-card hidden">
+          <p class="session-label">Student Session Active</p>
+          <h3>You are logged in on this browser</h3>
+          <p class="section-copy">
+            This student stays signed in after registration and there is no
+            logout action here.
+          </p>
+          <div id="studentSessionDetails" class="session-details"></div>
+        </div>
+        <div id="studentRegisterMessage" class="message hidden"></div>
+      </section>
+    </main>
+
+    <script src="script1.js"></script>
+  </body>
+</html>
